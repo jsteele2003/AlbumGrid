@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+    
+  </head>
+  <body>
+  	
+  	<script>
+  		var dir = "assets/img/";
+		var fileextension = ".jpg";
+		$.ajax({
+    		url : dir,
+    		success: function (data) {
+        		$(data).find("a").attr("href", function (i, val) {
+            		if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                		$("body").append( "<img src='"+ dir + val +"'>" );
+            		} 
+        		});
+			 }
+		});
+  	</script>
+  	
+    <div class="collapse bg-inverse" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Albums Added in 2017</p>
+          </div>
+          
+          <div class="col-sm-4 py-4">
+            <h4 class="text-white">Filter</h4>
+            <p class="text-white">
+            <input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
+			<input type="radio" onclick="filterSelection('cars')" name="category"> Rap
+			<input type="radio" onclick="filterSelection('animals')" name="category"> Jazz
+			<input type="radio" onclick="filterSelection('fruits')" name="category"> Indie
+			<input type="radio" onclick="filterSelection('colors')" name="category">
+			</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-inverse bg-inverse">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand">Music Library Albums</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    
+
+    <div class="album text-muted">
+      <div class="container">
+
+        <div class="row">
+          <div class="card">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="card">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
