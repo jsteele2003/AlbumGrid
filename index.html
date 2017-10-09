@@ -1,4 +1,31 @@
 <!DOCTYPE html>
+<style type="text/css">
+	@keyframes example {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.row {
+    animation-name: example;
+    animation-duration: 5s;
+}
+.jumbotron{
+  margin-bottom: 0 !important;
+  background-color: black !important;
+  padding-bottom: 0;
+}
+
+.album {
+  background:
+   black;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: grey !important;
+}
+</style>
 
 <html lang="en">
   <head>
@@ -45,10 +72,10 @@
             <h4 class="text-white">Filter</h4>
             <p class="text-white">
             <input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
-			<input type="radio" onclick="filterSelection('cars')" name="category"> Rap
-			<input type="radio" onclick="filterSelection('animals')" name="category"> Jazz
-			<input type="radio" onclick="filterSelection('fruits')" name="category"> Indie
-			<input type="radio" onclick="filterSelection('colors')" name="category">
+			<input type="radio" onclick="filterSelection('rap')" name="category"> Rap
+			<input type="radio" onclick="filterSelection('jazz')" name="category"> Jazz
+			<input type="radio" onclick="filterSelection('indie')" name="category"> Indie
+			<input type="radio" onclick="filterSelection('electronic')" name="category"> Electronic
 			</p>
           </div>
         </div>
@@ -63,19 +90,32 @@
       </div>
     </div>
     
+    <section class="jumbotron text-center">
+        <h1 class="jumbotron-heading">Album example</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+        <p>
 
-    <div class="album text-muted">
+        </p>
+    </section>
+
+    <div class="album">
       <div class="container">
 
+	
         <div class="row">
-          <div class="card">
-            <img src="assets/img/oJones.jpg" alt="Card image cap">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
+        		<!--to be populated with album jpgs -->
         </div>
 
       </div>
     </div>
+    
+     <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+      </div>
+    </footer>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
