@@ -5,7 +5,7 @@
     to {opacity: 1;}
 }
 
-.row {
+body {
     animation-name: example;
     animation-duration: 5s;
 }
@@ -13,16 +13,39 @@
   margin-bottom: 0 !important;
   background-color: black !important;
   padding-bottom: 0;
+   height: 100vh !important;
 }
+
+.jumbotron .container {
+max-width: 40em;
+}
+
+.text-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+.card {
+  padding: .75rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 0;
+}
+
 
 .album {
   background:
    black;
+  padding-bottom: 3rem;
+}
+.album .container{
+	margin: auto !important;
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   background-color: grey !important;
 }
 </style>
@@ -36,7 +59,7 @@ footer {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css"></script>
     
   </head>
   <body>
@@ -60,45 +83,48 @@ footer {
 		});
   	</script>
   	
-    <div class="collapse bg-inverse" id="navbarHeader">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4 py-4">
-            <h4 class="text-white">About</h4>
-            <p class="text-muted">Albums Added in 2017</p>
-          </div>
+   <!-- <div class="collapse bg-inverse" id="navbarHeader">-->
+   <!--   <div class="container">-->
+   <!--     <div class="row">-->
+   <!--       <div class="col-sm-4 py-4">-->
+   <!--         <h4 class="text-white">About</h4>-->
+   <!--         <p class="text-muted">Albums Added in 2017</p>-->
+   <!--       </div>-->
           
-          <div class="col-sm-4 py-4">
-            <h4 class="text-white">Filter</h4>
-            <p class="text-white">
-            <input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
-			<input type="radio" onclick="filterSelection('rap')" name="category"> Rap
-			<input type="radio" onclick="filterSelection('jazz')" name="category"> Jazz
-			<input type="radio" onclick="filterSelection('indie')" name="category"> Indie
-			<input type="radio" onclick="filterSelection('electronic')" name="category"> Electronic
-			</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="navbar navbar-inverse bg-inverse">
-      <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand">Music Library Albums</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+   <!--       <div class="col-sm-4 py-4">-->
+   <!--         <h4 class="text-white">Filter</h4>-->
+   <!--         <p class="text-white">-->
+   <!--         <input type="radio" onclick="filterSelection('all')" name="category" checked> Show all-->
+			<!--<input type="radio" onclick="filterSelection('rap')" name="category"> Rap-->
+			<!--<input type="radio" onclick="filterSelection('jazz')" name="category"> Jazz-->
+			<!--<input type="radio" onclick="filterSelection('indie')" name="category"> Indie-->
+			<!--<input type="radio" onclick="filterSelection('electronic')" name="category"> Electronic-->
+			<!--</p>-->
+   <!--       </div>-->
+   <!--     </div>-->
+   <!--   </div>-->
+   <!-- </div>-->
+    <!--<div class="navbar navbar-inverse bg-inverse">-->
+    <!--  <div class="container d-flex justify-content-between">-->
+    <!--    <a href="#" class="navbar-brand">Music Library Albums</a>-->
+    <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">-->
+    <!--      <span class="navbar-toggler-icon"></span>-->
+    <!--    </button>-->
+    <!--  </div>-->
+    <!--</div>-->
+    
+    <div class="jumbotron text-center">
+    	<div class = container> 
+    		<h1 class="jumbotron-heading">My Last 50 Albums</h1>
+       		<p class="lead text-muted">The most recent albums I've downloaded onto my local iTunes library- organisable by genre</p>
+        	<p>
+
+        </p></div>
+       
     </div>
     
-    <section class="jumbotron text-center">
-        <h1 class="jumbotron-heading">Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-        <p>
-
-        </p>
-    </section>
-
-    <div class="album">
+	
+    <div class="album text-muted">
       <div class="container">
 
 	
