@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <style type="text/css">
-	@keyframes example {
-    from {opacity: 0;}
-    to {opacity: 1;}
+
+
+@keyframes example {
+from {opacity: 0;}
+to {opacity: 1;}
 }
+
 
 body {
     animation-name: example;
     animation-duration: 5s;
 }
+
+
 .jumbotron{
   margin-bottom: 0 !important;
   background-color: black !important;
@@ -21,8 +26,8 @@ max-width: 40em;
 }
 
 .text-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
+  min-height: 100%;  
+  min-height: 100vh; 
 
   display: flex;
   align-items: center;
@@ -41,12 +46,9 @@ max-width: 40em;
    black;
   padding-bottom: 3rem;
 }
-.album .container{
-	margin: auto !important;
-}
 
 footer {
-  background-color: grey !important;
+  background-color: black !important;
 }
 </style>
 
@@ -56,25 +58,27 @@ footer {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS and jQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css"></script>
     
   </head>
   <body>
   	
   	<script>
-  		var dir = "assets/img/";
+  		var dir = "./assets/img/";
 		var fileextension = ".jpg";
 		$.ajax({
     		url : dir,
     		success: function (data) {
         		$(data).find("a").attr("href", function (i, val) {
             		if( val.match(/\.(jpe?g|png|gif)$/) ) {
-            			var newdiv1 = $( "<div class='card'></div>" );
-            			$('.row').append(newdiv1)
-            			newdiv1.append( "<img src='"+ dir + val + "'alt='" + val.split("%20")[0] +  "' >" );
+            			var newCard = $( "<div class='card'></div>" );
+            			var front = $( "<div class='front'></div>" );
+            			$('.row').append(newCard);
+            			$('.card').append(front);
+            			
+            			front.append( "<img src='"+ dir + val + "'alt='" + val.split("%20").join(" ").split(".")[0]+  "' >" );
             			
                 		// $(".row").append( "<img data-src='"+ dir + val +"'>" );
             		} 
@@ -82,6 +86,19 @@ footer {
 			 }
 		});
   	</script>
+  	
+  	<script>
+  			// TODO: adding album details to backs of cards
+  		// $(document).ready(function() {
+            // $.ajax({
+            //         type: "GET",
+            //         url: "itunesV1.csv",
+            //         dataType: "text",
+            //         success: function(data) {processData(data);}
+            //      });
+            // });
+  	</script>
+  	
   	
    <!-- <div class="collapse bg-inverse" id="navbarHeader">-->
    <!--   <div class="container">-->
@@ -113,14 +130,13 @@ footer {
     <!--  </div>-->
     <!--</div>-->
     
-    <div class="jumbotron text-center">
+    
+	<div class="jumbotron text-center">
     	<div class = container> 
-    		<h1 class="jumbotron-heading">My Last 50 Albums</h1>
-       		<p class="lead text-muted">The most recent albums I've downloaded onto my local iTunes library- organisable by genre</p>
+    		<h1 class="jumbotron-heading">50 Albums from my 2017</h1>
+       		<p class="lead text-muted">The most recent albums I've added this year</p>
         	<p>
-
         </p></div>
-       
     </div>
     
 	
@@ -130,7 +146,6 @@ footer {
 	
         <div class="row">
         		<!--to be populated with album jpgs -->
-        </div>
 
       </div>
     </div>
@@ -142,6 +157,7 @@ footer {
         </p>
       </div>
     </footer>
+
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
